@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Product List</title>
+		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/styles.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="/">My eCommerce bitches!</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link active" href="/">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/producto/crear">Crear Producto</a>
+				</li>
+			</ul>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<% products.forEach(product => { %>
+					<div class="col-lg-3">
+						<div class="card">
+							<img class="card-img-top" src="<%= product.pdtoImage %>" alt="thumbnail">
+							<div class="card-body">
+								<h5 class="card-title"><%= product.pdtoName %></h5>
+								<p class="card-text"><b>$ <%= product.pdtoPrice %></b></p>
+								<p class="card-text"><%= product.pdtoDesc %></p>
+								<a href="#" class="btn btn-info">Ver más</a>
+							</div>
+						</div>
+					</div>
+				<% }) %>
+			</div>
+		</div>
+	</body>
+</html>
